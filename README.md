@@ -51,11 +51,14 @@ blockly-android는 안드로이드 앱으로 블록코드 입력 및 실행 소�
 <br />
 
 ## 안드로이드 앱 설치
-----
 
-구글 플레이 앱 등록은 진행 중이라 구글플레이에서 설치가 불가능하다. 따라서 앱을 사용하기 위해서는 ‘android/apk’ 폴더에 apk 파일을 사용하여 설치할 수 있다. 
+
+구글 플레이 앱 등록은 진행 중이라 구글플레이에서 설치가 불가능하다.
+
+구글 플레이 앱 동록 전에 사용하기 위해서는 ‘android/apk’ 폴더에 apk 파일을 사용하여 설치할 수 있다.<br />
 ‘documents’ 폴더의 ‘Blockly+Arduino 블럭 코드 및 사용설명서’을 참고할 수 있다.
 
+----
 
 <p style="color: red;"> --- 현재 구글의 ‘Play 스토어’에 안드로이드 앱을 등록 진행 중 ---</p>
 
@@ -162,6 +165,7 @@ U, D, L, R의 이름이 부여되어 있어 블록에서 선택하면 된다.
   이를 받은 앱에서는 이벤트로 처리한다. 앱 입장에서는 실시간 실행 입장에서 언제 읽혀 올지 모르기 때문이다.
 
 I2C의 처리 과정은 다음과 같다.
+
   ![image](https://github.com/user-attachments/assets/4278de6b-02ca-4fe6-92e9-d43ae54ead08)
 
 
@@ -276,6 +280,29 @@ repeat, while, for 처리를 한다
 2.	LED을 끄고, 포트 3의 PWM 포트에 200을 설정한다. 
 3.	500ms 지연한다.
 
+## 아두이노 아날로그 입력과 PWM 출력
+아두이노의 아날로그 입력으로 ADC의 값을 읽어 어 전달되는 값이다. 아두이노 보드에 따라 아날로그의 입력 핀은 결정되어 있다.
+
+![analog_pwm_led](assets/images/analog_pwm_led.png)
+
+아날로그 입력 핀은 UNO의 경우 A0~A5까지이며, 모델에 입력 수는 다르다.
+아날로그의 입력은 10비트이고, PWM는 8비트 출력이다. 쉬프트 연산자를 통해 값을 조정하여 출력하였다.
+
+## I2C 사용
+많은 센서에서 I2C을 사용한다. 예로 조도센서 BH1750FVI 사용 예이다.
+초기화 과정:
+‘I2C 설정’에서 아이디를 임의의 숫자로 10으로 사용 센서를 지정하고 35는 BH1750FVI I2C 주소값이다. 아이디는 여러 개의 I2C 연결 시 각각을 구별한다.
+
+![analog_pwm_char](assets/images/i2c_pwm_char.png )
+
+‘I2C ID 10’ 이벤트는 레지스터 명령에 의해 의해 아두이노가 읽어 앱으로 전송하면 동작하는 이벤트 이다.
+
+![analog_pwm_led](assets/images/i2c_read_reg.png)
+
+‘I2C 읽기’ 블록에 의해 1초에 한번씩 읽기 명령을 아두이노 전송한다.
+아래는 버튼 이벤트에 의해 읽기를 전송한다.
+
+
 ## 조이스틱
 조이스틱에서 작동되는 좌표를 이벤트 블록에 전달하여 코드에 따라 기능 구현을 할 수 있다.<br>
 조이스틱의 좌표값은 두가지로 보내진다.
@@ -285,8 +312,50 @@ repeat, while, for 처리를 한다
 
 <img src="https://github.com/iblockly/ArduBlocklyAndroid/assets/160044072/0a209e23-e766-4e5c-bb30-eb28176d6bb6" width="40%" height="40%"  alt="blockly_exam_joystick" />
 
-1.	조이스틱이 움직일 때, 좌표값 x,y에 그림을 움직인다.
+조이스틱이 움직일 때, 좌표값 x,y에 그림을 움직인다.
 
+### 조이스틱과 위치 정보 문자 표시
+
+조이스틱의 움직임에 따라 ‘문자’ 표시 블록으로 그림의 위치를 화면에 표시한다. 
+
+![joystick_char_pos](assets/images/joystick_char_pos.png)
+
+동작은 결과는 다음과 같다.
+
+![joystick_char_pos_result](assets/images/joystick_char_pos_result.jpg)
+
+
+## 문자 표현
+실행화면에 정보를 표현하기 위한 문자, 도형, 상태바 등을 지원한다. 
+다음 예는 문자를 표현한 예 이다.
+
+![charbox_color_time](assets/images/charbox_color_time.png)
+
+‘현재 시간’ 블록은 앱의 현재 시간을 읽어 표시한 것이다. 아두이노 실시간 RTC와 상관없다.
+
+![charbox_color_time_run](assets/images/charbox_color_time_result.png)
+
+## 도형 그리기
+
+실행화면에 정보를 표현하기 위한 문자, 도형, 상태바 등을 지원한다. 
+
+![shape_attri_set](assets/images/shape_attri_set.png)
+
+다음의 결과에서 문자는 맨위에 표시하고 도형은 아래 층에 표시한다.
+
+![shape_attri_set_run](assets/images/shape_attri_set_run.png)
+
+<br />
+
+### 상태바와 조이스틱의 결합
+
+![statebar_shape_joystick](assets/images/statebar_shape_joystick.png)
+
+![statebar_shape_joystick_run](assets/images/statebar_shape_joystick_run.png)
+
+<br />
+<br />
+<br />
 
 # 마무리
 
