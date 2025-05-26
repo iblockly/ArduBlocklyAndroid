@@ -19,11 +19,13 @@ Android app using Arduino-Blockly.
 
 안드로이드 앱에서 작동하는 blockly 기반의 편집기에 아두이노와 연동하는 Javascript 기반의 대응 동작을 통해 작동한다.
 
-![AndroidBlocklyCodeProc](https://github.com/iblockly/ArduBlocklyAndroid/assets/160044072/c8da7f1f-efea-42f0-a339-6e526d9d4c7f)
+<!-- ![AndroidBlocklyCodeProc](https://github.com/iblockly/ArduBlocklyAndroid/assets/160044072/c8da7f1f-efea-42f0-a339-6e526d9d4c7f)-->
+<img src="assets/images/AndroidBlocklyCodeProc.png" width="70%" height="70%"  alt="AndroidBlocklyCodeProc" />
 
 안드로이드와 아두이노 사이에는 블루투스 통신을 통해 스크래치 코드의 실행을 연동한다. 스크래치 코드의 실행은 안드로이드에서 하고 아두이노에는 포트의 읽기와 쓰기를 주로 담당한다.
 
-![ArduBlockly_SysConfig](https://github.com/iblockly/ArduBlocklyAndroid/assets/160044072/f9204ce7-a21e-4e3c-8ff1-1af2e2717b5c)
+<!-- ![ArduBlockly_SysConfig](https://github.com/iblockly/ArduBlocklyAndroid/assets/160044072/f9204ce7-a21e-4e3c-8ff1-1af2e2717b5c)-->
+<img src="assets/images/ArduBlockly_SysConfig.png" width="70%" height="70%"  alt="ArduBlockly_SysConfig" />
 
 
 ## 안드로이드
@@ -32,13 +34,20 @@ Android app using Arduino-Blockly.
 - 자바스크립트 언어는 인터프리터에 의해 실행되면서 블루투스를 통해 아두이노와 상태 및 포트 명령을 전송하여 동작한다.
 
 ### Blockly
+
 Blockly는 안드로이드에서 실행되는 블록을 사용하여 코딩하고 여러가지 언어를 생성할 수 있다.<br>
+
 안드로이드 blockly 프로젝트: https://github.com/google/blockly-android<br>
 안드로이드 blockly 개발: https://developers.google.com<br>
-blockly-android는 안드로이드 앱으로 블록코드 입력 및 실행 소스코드 생성 오픈소스이다. 다양한 언어로 코드를 생성할 수 있다. 이중에 코드 생성 언어는 JS(JavaScript)를 생성하는 선택을 하였다. 생성된 자바스크립트 코드소스를 JS-인터프리터를 이용하여 실행하고 아두이노 데이터를 송수신을 통해 아두이노 상태제어 한다.  
+
+blockly-android는 안드로이드 앱으로 블록코드 입력 및 실행 소스코드 생성 오픈소스이다.
+다양한 언어로 코드를 생성할 수 있다. 이중에 코드 생성 언어는 JS(JavaScript)를 생성하는 선택을 하였다. 
+생성된 자바스크립트 코드소스를 JS-인터프리터를 이용하여 실행하고 아두이노 데이터를 송수신을 통해 아두이노 상태제어 한다.  
 
 # 안드로이드 앱 실행을 위한 준비 
+
 안드로이드 앱을 설치하고, 이 앱을 실행 전에 아두이노의 준비가 되어야 한다.
+
 1. 안드로이드 앱을 설치한다. 
 2. 아두이노에 블루투스 연결 전에 ‘arduino’ 폴더의 아두이노 코드를 업로드 한다.
 3. 아두이노에 블루투스 모듈을 연결한다.
@@ -80,13 +89,14 @@ blockly-android는 안드로이드 앱으로 블록코드 입력 및 실행 소�
 
 ### 아두이노-블루투스 연결
 
-![ArduinoUNO-Bluetooth_Sch](https://github.com/iblockly/ArduBlocklyAndroid/assets/160044072/1f93ddc7-d7be-47df-a6eb-ad3d746f6047)
-
+<!-- ![ArduinoUNO-Bluetooth_Sch](https://github.com/iblockly/ArduBlocklyAndroid/assets/160044072/1f93ddc7-d7be-47df-a6eb-ad3d746f6047)-->
+<img src="assets/images/ArduinoUNO-Bluetooth_Sch.png" width="80%" height="80%"  alt="ArduinoUNO-Bluetooth_Sch" />
 
 아두이노 UNO를 사용할 경우 그림과 같이 연결한다.  블루투스 전원은 사용하는 모듈의 전원을 확인하고 5V인가를 확인하고 다르다면 적당한 Vcc 전원을 선택하여 연결한다.<br>
 아두이노의 블루투스 연결에서 소프트웨어의 선택에서 ‘SoftwareSerial’ 라브러리를 사용할 경우 가끔 오류가 발생할 가능성이 있다. 따라서 USB 쪽에서 사용하는 포트0(RX),1(TX)와 중복 되므로 실행 과정에서 USB에 시리얼 통신을 사용하면 블루투스와 충돌이 일어나므로 통신을 사용하면 안된다. ‘arduino’ 폴더에 제공하는 코드에서는 블루투스 통신은 ‘Serial’ 클래스를 사용하였다.
 
-![Arduino_SerialPort](https://github.com/iblockly/ArduBlocklyAndroid/assets/160044072/30cfeab5-0d97-4c75-935a-7fe2bc82f49c)
+<!-- ![Arduino_SerialPort](https://github.com/iblockly/ArduBlocklyAndroid/assets/160044072/30cfeab5-0d97-4c75-935a-7fe2bc82f49c)-->
+<img src="assets/images/Arduino_SerialPort.png" width="50%" height="50%"  alt="Arduino_SerialPort" />
 
 ```c++
 // arduboard.h
@@ -281,9 +291,10 @@ repeat, while, for 처리를 한다
 3.	500ms 지연한다.
 
 ## 아두이노 아날로그 입력과 PWM 출력
+
 아두이노의 아날로그 입력으로 ADC의 값을 읽어 어 전달되는 값이다. 아두이노 보드에 따라 아날로그의 입력 핀은 결정되어 있다.
 
-![analog_pwm_led](assets/images/analog_pwm_led.png)
+<img src="assets/images/analog_pwm_led.png" width="40%" height="40%"  alt="analog_pwm_led" />
 
 아날로그 입력 핀은 UNO의 경우 A0~A5까지이며, 모델에 입력 수는 다르다.
 아날로그의 입력은 10비트이고, PWM는 8비트 출력이다. 쉬프트 연산자를 통해 값을 조정하여 출력하였다.
@@ -293,11 +304,12 @@ repeat, while, for 처리를 한다
 초기화 과정:
 ‘I2C 설정’에서 아이디를 임의의 숫자로 10으로 사용 센서를 지정하고 35는 BH1750FVI I2C 주소값이다. 아이디는 여러 개의 I2C 연결 시 각각을 구별한다.
 
-![analog_pwm_char](assets/images/i2c_pwm_char.png )
+<img src="assets/images/i2c_pwm_char.png" width="40%" height="40%"  alt="i2c_pwm_char" />
+
 
 ‘I2C ID 10’ 이벤트는 레지스터 명령에 의해 의해 아두이노가 읽어 앱으로 전송하면 동작하는 이벤트 이다.
 
-![analog_pwm_led](assets/images/i2c_read_reg.png)
+<img src="assets/images/i2c_read_reg.png" width="30%" height="30%"  alt="i2c_read_reg" />
 
 ‘I2C 읽기’ 블록에 의해 1초에 한번씩 읽기 명령을 아두이노 전송한다.
 아래는 버튼 이벤트에 의해 읽기를 전송한다.
@@ -310,7 +322,7 @@ repeat, while, for 처리를 한다
 - d,a: d는 원점으로부터 거리값이고, a는 각도값이며, 360도 값이다.
 위의 두값 모두 전달되므로 선택적으로 사용할 수 있다. 4개의 값은 JS의 전역변수로 처리된다.
 
-<img src="https://github.com/iblockly/ArduBlocklyAndroid/assets/160044072/0a209e23-e766-4e5c-bb30-eb28176d6bb6" width="40%" height="40%"  alt="blockly_exam_joystick" />
+<img src="https://github.com/iblockly/ArduBlocklyAndroid/assets/160044072/0a209e23-e766-4e5c-bb30-eb28176d6bb6" width="50%" height="50%"  alt="blockly_exam_joystick" />
 
 조이스틱이 움직일 때, 좌표값 x,y에 그림을 움직인다.
 
@@ -318,22 +330,22 @@ repeat, while, for 처리를 한다
 
 조이스틱의 움직임에 따라 ‘문자’ 표시 블록으로 그림의 위치를 화면에 표시한다. 
 
-![joystick_char_pos](assets/images/joystick_char_pos.png)
+<img src="assets/images/joystick_char_pos.png" width="40%" height="40%"  alt="joystick_char_pos" />
 
 동작은 결과는 다음과 같다.
 
-![joystick_char_pos_result](assets/images/joystick_char_pos_result.jpg)
-
+<img src="assets/images/joystick_char_pos_result.jpg" width="40%" height="40%"  alt="joystick_char_pos_result" />
 
 ## 문자 표현
+
 실행화면에 정보를 표현하기 위한 문자, 도형, 상태바 등을 지원한다. 
 다음 예는 문자를 표현한 예 이다.
 
-![charbox_color_time](assets/images/charbox_color_time.png)
+<img src="assets/images/charbox_color_time.png" width="40%" height="40%"  alt="charbox_color_time" />
 
 ‘현재 시간’ 블록은 앱의 현재 시간을 읽어 표시한 것이다. 아두이노 실시간 RTC와 상관없다.
 
-![charbox_color_time_run](assets/images/charbox_color_time_result.png)
+<img src="assets/images/charbox_color_time_result.png" width="40%" height="40%"  alt="charbox_color_time_result" />
 
 ## 도형 그리기
 
@@ -351,8 +363,16 @@ repeat, while, for 처리를 한다
 
 ![statebar_shape_joystick](assets/images/statebar_shape_joystick.png)
 
-![statebar_shape_joystick_run](assets/images/statebar_shape_joystick_run.png)
+조이스틱 이벤트가 발생하면 상태바의 속성값 중, 현재 진행 상태 값을 조이스틱 위치값을 활용하여 상태바의 진행을 변화 시킨다.
 
+문자 표시에서 x축 위치값에서 처리한 상태값과 녹색 좌표값은 조이스틱 좌표값 (x,y) 이다.
+
+
+
+<img src="assets/images/statebar_shape_joystick_run.png" width="40%" height="40%"  alt="statebar_shape_joystick_run" />
+
+
+조이스틱의 x축의 값과 상태바의 진행 상태값을 변화 시킨다. 조이스틱fmf x축으로 움직이면 상태바가 변화한다. 
 <br />
 <br />
 <br />
