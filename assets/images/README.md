@@ -16,7 +16,7 @@
 
 <img src="i2c_pwm_char.png" width="50" height="100"/> &nbsp; <img src="i2c_read_reg.png" width="50" height="100"/>
 <img src="joystick_char_pos.png" width="50" height="100"/> &nbsp; <img src="joystick_char_pos_result.jpg" width="50" height="100"/>
-<img src="charbox_color_time.png" width="50" height="100"/> &nbsp; <img src="charbox_color_time_run.png" width="50" height="100"/>
+<img src="charbox_color_time.png" width="50" height="100"/> &nbsp; <img src="charbox_color_time_result.png" width="50" height="100"/>
 
 <img src="shape_attri_set.png" width="50" height="100"/> &nbsp; <img src="shape_attri_set_run.png" width="50" height="100"/>
 <img src="statebar_shape_joystick.png" width="50" height="100"/> &nbsp; <img src="statebar_shape_joystick_run.png" width="50" height="100"/>
