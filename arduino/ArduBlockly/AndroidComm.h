@@ -2,24 +2,6 @@
 #define _ANDROIDCOMM_H_
 
 
-#ifdef UNO
- #define SZ_DIGITAL_PORT 19
- #define SZ_ANALOG_IN    6
- #define SZ_PWM_PORT     6
-#elif defined(MEGA)
- #define SZ_DIGITAL_PORT 69
- #define SZ_ANALOG_IN    16
- #define SZ_PWM_PORT     15
-#endif
-
-////////////////////////////////////////////
-
-#define TPORT_NULL      0
-#define TPORT_DIG_IN    1
-#define TPORT_DIG_OUT   2
-#define TPORT_ANALG_IN  3
-#define TPORT_PWM       4
-
 /////////////////////////////////////////////
 
 #define BKLY_AINTF_UNKNOWN  -1
@@ -35,27 +17,75 @@
 #define BKLY_AINTF_PREAD    12
 #define BKLY_AINTF_ANSET    13
 
+#define BKLY_AINTF_I2CSETID  0x10
+#define BKLY_AINTF_IWRITE   0x11
+#define BKLY_AINTF_ISETREG  0x12
+#define BKLY_AINTF_IREAD    0x13
+#define BKLY_AINTF_IGETREG  0x14
+
+#define BKLY_SEPEC_FUN      0xF0
+
+#define BKLY_ERROR          -1
+
 //////////////////////////////////////
 
 #define MPSET_NULL     0
 #define MPSET_DIG_RD   1
 #define MPSET_DIG_WR   2
 #define MPSET_IN_ANL   3
-#define MPSET_PWM      5
-#define MPSET_PWM_CONT 6
+#define MPSET_PWM      4
+#define MPSET_PWM_CONT 5
+#define MPSET_ISETID   6
+#define MPSET_IWRITE   7
+#define MPSET_ISETREG  8
+#define MPSET_IREAD    9
+#define MPSET_IGETREG  10
+#define MPSET_IGETREGL 11
+
+#define MPSET_EXTEND   12
+
+/// Error Code
+
+#define RFUN_PERR_NULL     0x00
+#define RFUN_PERR_DPORT    0x61 // 011 000 01
+#define RFUN_PERR_ANAL     0x65 // 011 001 01
+#define RFUN_PERR_PWM      0x69 // 011 010 01
+
+//////////////////////////////////
+
+extern char merror_c;
+
+//////////////////////////////////
 
 void initPorts();
+
+
+char digital_write(char port, byte mode);
+char digital_read(char port);
+
 
 void sendDigitalInPort();
 void sendAnalogValue(char pinNumber);
 
 void setPortReadable(char port);
 void setPortWritable(char port);
-boolean isPortWritable(char port);
+bool isPortWritable(char port);
+
+void sendBlutooth(byte*pbuff, char leng);
+
+void sendDigitalValue(char apin);
+void sendDigitalValueExtend(char apin);
+void sendAnalogValue(char apin);
+void sendAnalogValueExtend(char apin);
+
+void sendErrorCode(char err);
 
 // Command Data Processor
 
 void print_blocklyread(char retc);
 char update_port_proc(byte c);
+
+char make_setid_ack(byte* pdata, SI2C_DEVICE* pdev);
+char make_i2c_read(byte* pdata, SI2C_DEVICE* pdev);
 
 #endif

@@ -13,3 +13,4 @@ char isdecdigit(char ch);
 char *insert_numberstring(char *pstr, char *pistr);
 
 #endif
+[%d]

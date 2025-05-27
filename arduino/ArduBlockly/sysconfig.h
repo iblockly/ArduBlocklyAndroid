@@ -3,29 +3,58 @@
 #define _SYSCONFIG_H_
 
 #include "arduboard.h"
+ 
+/////////////////////////////////////////////
+// Bluetooth Serial
 
-void init_debug(void);
+// BLE
+//#define BAUD_BTSERIAL      9600    
+//#define BAUD_BTSERIAL      38400
 
-///////////////////////////////////////////////////////
-// Debug
+//HC-06
+#define BAUD_BTSERIAL      115200
 
-//#define DBG_LOG
+#if defined(MEGA)
+ #define USE_BTSERIAL  1  // 0, 1, 2, 3
+#endif
 
-#ifdef DBG_LOG
+/////////////////////////////////////////////
+// Debug 
 
- #define DBG_CHANNEL_SWSERIAL
- //#define DBG_CHANNEL_SERIAL
+#define DBG_LOG
 
- char* uprintf(char* fmt, ...);
- void  DPRINTS(char *fmt, ...);
+/// Arduino UNO  ///////////////////
+#if defined(UNO)
+ #if defined(DBG_LOG)
+ 
+  #define BAUD_DBG_SWSER  9600
+  #define DBG_CHANNEL_SWSERIAL
 
- #define DPRINTF  uprintf 
-
- #ifdef DBG_CHANNEL_SWSERIAL
-  // Define: Sw Serial Pin 
+  // Define: Sw Serial Pin
   #define SWSERIAL_RX  2
   #define SWSERIAL_TX  3
  #endif
 
+/// Arduino MEGA 2560 ////////////////
+#elif defined(MEGA)
+
+ #define BAUD_DBG_SERIAL  115200
+ 
+ #if defined(DBG_LOG)
+  #if USE_BTSERIAL==0
+   #define DBG_CHANNEL_SERIAL1
+  #elif USE_BTSERIAL==1
+   #define DBG_CHANNEL_SERIAL0
+  #endif   
+ #endif
 #endif
+
+#if defined(DBG_LOG)
+ char* uprintf(const char* fmt, ...);
+ void  DPRINTS(const char* fmt, ...);
+ #define DPRINTF  uprintf
+#endif
+
+void init_debug(void);
+
 #endif

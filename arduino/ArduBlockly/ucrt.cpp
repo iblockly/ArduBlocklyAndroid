@@ -1,6 +1,7 @@
 
+
 // string의 마지막 null 위치 
-char *get_string_end(char *pstr)
+char *string_end(char *pstr)
 {
     while (*pstr)
         pstr++;
