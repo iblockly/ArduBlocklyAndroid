@@ -1,0 +1,106 @@
+
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_setup" id="bf86d30a-4ae9-4407-8c8e-67daded6f847" x="70.0" y="-23.0">
+    <statement name="DO">
+      <block type="variables_set" id="6ba975e7-03b5-43dc-a974-df5aae64436a">
+        <value name="VALUE">
+          <block type="math_number" id="65ac7d99-b6ca-4307-8584-48c825fb6755">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <field name="VAR">lev</field>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_loop" id="481ff331-edce-4090-80ba-1a770a5753ee" x="71.0" y="121.0">
+    <statement name="DO">
+      <block type="period_time_on" id="86931f01-8938-4541-a770-862426f0f5c3">
+        <value name="TIMES">
+          <block type="math_number" id="945cd7c7-1530-4cff-9bbc-d190986ac6ce">
+            <field name="NUM">500</field>
+          </block>
+        </value>
+        <field name="ID">tm05</field>
+        <statement name="DO">
+          <block type="variables_set" id="857e0fd6-2a37-4a24-88fe-62b8ead15cd7">
+            <value name="VALUE">
+              <block type="math_bitwise" id="714ce71e-bf11-465f-bf2a-df2982c387f5">
+                <value name="A">
+                  <shadow type="math_number" id="e1e4cae8-4e0d-4fa7-a675-7c53bccbb32d">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="arduino_get_analog" id="1ff5d6df-02be-4f01-8463-e4aff9d535fc">
+                    <field name="PORTA">2</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="d4802524-64f6-4495-9036-170274670fbd">
+                    <field name="NUM">2</field>
+                  </shadow>
+                </value>
+                <field name="OP">SHIFT_RIGHT</field>
+              </block>
+            </value>
+            <field name="VAR">lev</field>
+            <next>
+              <block type="arduino_set_pwm" id="20d4154e-ef95-424f-97aa-478cb2f5248d">
+                <value name="PWM">
+                  <shadow type="math_number" id="a26c862a-06df-4a4c-a96f-8c651135e5d6">
+                    <field name="NUM">128</field>
+                  </shadow>
+                  <block type="variables_get" id="a668ec77-f341-427d-8e60-7a25e614f640">
+                    <field name="VAR">lev</field>
+                  </block>
+                </value>
+                <field name="PORTA">6</field>
+                <next>
+                  <block type="controls_ifelse" id="176793c7-3c55-4b4d-81d3-c27dfb6d3c36">
+                    <value name="IF0">
+                      <block type="logic_compare" id="b059114b-c344-4e5a-8315-469c32b859e2">
+                        <value name="A">
+                          <block type="variables_get" id="6650653e-0616-4401-bcdf-e88bd116bf43">
+                            <field name="VAR">lev</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="f4542c7f-5711-49dc-b56b-4727567eee93">
+                            <field name="NUM">128</field>
+                          </block>
+                        </value>
+                        <field name="OP">GT</field>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="arduino_set_digital" id="a34e0c67-9c81-4fae-abe6-346638392fe2">
+                        <field name="PORTD">13</field>
+                        <field name="OUT">1</field>
+                      </block>
+                    </statement>
+                    <statement name="ELSE">
+                      <block type="arduino_set_digital" id="d16215ca-52cc-4a34-9240-a9f2f9c32078">
+                        <field name="PORTD">13</field>
+                        <field name="OUT">0</field>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="text_print" id="238f55bc-8773-4452-90b5-d7c4994ac951">
+                        <value name="TEXT">
+                          <shadow type="text" id="6ff932df-eadb-4b64-9820-403af1ee4d7d">
+                            <field name="TEXT">abc</field>
+                          </shadow>
+                          <block type="variables_get" id="5f359e00-2c7c-41b3-b30f-7531966e9bda">
+                            <field name="VAR">lev</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

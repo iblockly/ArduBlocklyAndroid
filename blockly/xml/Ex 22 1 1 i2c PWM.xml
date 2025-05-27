@@ -1,0 +1,161 @@
+
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_setup" id="535c4e13-595a-4aaf-8500-2096035de4c0" x="21.0" y="-472.0">
+    <statement name="DO">
+      <block type="arduino_set_digital" id="0a9e4bc6-d9a5-41cf-8fc4-e484da7b3eac">
+        <field name="PORTD">13</field>
+        <field name="OUT">0</field>
+        <next>
+          <block type="arduino_i2c_set" id="a75230eb-5dc7-4e2a-923d-ad21eb050dae">
+            <field name="ID">10</field>
+            <field name="ADDR">35</field>
+            <next>
+              <block type="arduino_i2c_write" id="f8fd7af6-63dc-4672-b607-11f4c9987eaf">
+                <field name="ID">10</field>
+                <field name="VALUE">1</field>
+                <next>
+                  <block type="arduino_i2c_write" id="45b68b11-4aca-406d-bc82-5b642115db0a">
+                    <field name="ID">10</field>
+                    <field name="VALUE">16</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_loop" id="b1af6ed1-6c90-45ad-bcaa-b9eb0a0fc2ed" x="22.0" y="285.0">
+    <statement name="DO">
+      <block type="period_time_on" id="6cf062d6-f8ca-4357-a946-a2c830fbc8cd">
+        <value name="TIMES">
+          <block type="math_number" id="b189a9e3-09a3-4ae7-bb6f-89501f6a5dbc">
+            <field name="NUM">1000</field>
+          </block>
+        </value>
+        <field name="ID">t1</field>
+        <statement name="DO">
+          <block type="arduino_i2c_read" id="610fd8e1-836a-4424-9631-9a0b3a7d903e">
+            <field name="ID">10</field>
+            <field name="SIZE">1</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="event_i2c" id="76c08d1c-cc9a-4850-8968-da49678cee57" x="21.0" y="-146.0">
+    <field name="IID">10</field>
+    <statement name="DO">
+      <block type="variables_set" id="586298b5-a256-49a5-bf63-aa2eb30a7ce5">
+        <value name="VALUE">
+          <block type="math_arithmetic" id="648225c9-20bb-4425-819f-e7c6468dd886">
+            <value name="A">
+              <shadow type="math_number" id="239187a0-519f-4953-99b0-32a28fc67da0">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="85453f85-a94a-4b71-b1d6-949a1fa95c4c">
+                <field name="VAR">ireg</field>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="c6426126-a6c9-4d03-b592-cafb12670b06">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="math_float" id="c47a693f-646b-4d3a-82a3-ad6b591e174c">
+                <field name="NUM">1.2</field>
+              </block>
+            </value>
+            <field name="OP">DIVIDE</field>
+          </block>
+        </value>
+        <field name="VAR">lux</field>
+        <next>
+          <block type="text_print" id="e69d1d13-d8b1-440a-a8f9-08df43382c59">
+            <value name="TEXT">
+              <shadow type="text" id="80f566b8-002b-434f-bfe8-ff6a36158c0e">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="fmt_float2string" id="f18db1fc-57aa-4b90-b826-fed31ba4c9fb">
+                <value name="VALUE">
+                  <block type="variables_get" id="0c585f40-f994-4af6-9a9f-38b8d38d365f">
+                    <field name="VAR">lux</field>
+                  </block>
+                </value>
+                <field name="FP_LENG">2</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="02fc4698-c2f7-401b-8296-3585144bcdb2">
+                <value name="VALUE">
+                  <block type="fmt_float2string" id="ab2e01b0-a270-4853-b1ed-a282a3ac2693">
+                    <value name="VALUE">
+                      <block type="variables_get" id="ed29164a-8d1a-4841-8ee0-ff841d966a83">
+                        <field name="VAR">lux</field>
+                      </block>
+                    </value>
+                    <field name="FP_LENG">0</field>
+                  </block>
+                </value>
+                <field name="VAR">item</field>
+                <next>
+                  <block type="arduino_set_pwm" id="e1e547a0-1096-4dbd-8de1-6d70f12b5af9">
+                    <value name="PWM">
+                      <shadow type="math_number" id="c20734fb-d1c3-4cdc-a173-d0fa83d94be2">
+                        <field name="NUM">128</field>
+                      </shadow>
+                      <block type="variables_get" id="18563926-5a6c-400e-a12d-4a71d07dafb0">
+                        <field name="VAR">item</field>
+                      </block>
+                    </value>
+                    <field name="PORTA">6</field>
+                    <next>
+                      <block type="shape_color_font" id="7e2d8edb-0546-429b-bb41-a284de451d14">
+                        <value name="COLOR">
+                          <block type="colour_random" id="bc59b7cd-ddf5-4829-b4e6-6a185845653e" />
+                        </value>
+                        <field name="ID">t</field>
+                        <value name="FONT">
+                          <block type="object_font_in" id="c10480c3-ea88-4f4f-8513-c614789e36de">
+                            <value name="FONTSIZE">
+                              <shadow type="math_number" id="8c759926-99a9-4be5-8236-9d9d699ac6ed">
+                                <field name="NUM">30</field>
+                              </shadow>
+                            </value>
+                            <field name="FONT">Arial</field>
+                            <field name="FONTSTYLE">bold</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="draw_text" id="0504830b-9591-4640-bea3-675dbf8beed1">
+                            <value name="TEXT">
+                              <block type="variables_get" id="5c25e9cb-f2b4-4abf-8889-a332d16d3392">
+                                <field name="VAR">item</field>
+                              </block>
+                            </value>
+                            <field name="ID">t</field>
+                            <field name="VX">50</field>
+                            <field name="VY">600</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="c537f86f-9b39-40b5-b871-377fd1274b93" x="25.0" y="518.0">
+    <field name="EVENT">0</field>
+    <statement name="DO">
+      <block type="arduino_i2c_read" id="d59e9dc1-b086-4b2b-a16d-6d4293212620">
+        <field name="ID">10</field>
+        <field name="SIZE">1</field>
+      </block>
+    </statement>
+  </block>
+</xml>

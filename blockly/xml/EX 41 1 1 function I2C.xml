@@ -1,0 +1,203 @@
+
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_setup" id="433fef45-fddb-42a0-b749-b3e552c0508b" x="-72.0" y="-449.0">
+    <statement name="DO">
+      <block type="variables_set" id="3cc584fc-feba-451c-8192-b1e26f87886d">
+        <value name="VALUE">
+          <block type="math_number" id="a1bdb278-abb0-45cd-97c7-20322e14dac3">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <field name="VAR">item</field>
+        <next>
+          <block type="arduino_i2c_set" id="c0bf76b7-458c-4bcd-bf47-bdd089ce66ad">
+            <field name="ID">23</field>
+            <field name="ADDR">35</field>
+            <next>
+              <block type="arduino_i2c_write" id="f890f8a2-07b8-48a1-b446-4f466e876e35">
+                <field name="ID">23</field>
+                <field name="VALUE">1</field>
+                <next>
+                  <block type="arduino_i2c_write" id="0b9e4ac1-ae9a-47e0-a585-acf17e04cfca">
+                    <field name="ID">23</field>
+                    <field name="VALUE">16</field>
+                    <next>
+                      <block type="draw_text" id="2c6cafab-4aaa-4efb-bbe5-a3e62520f4a4">
+                        <value name="TEXT">
+                          <block type="text" id="3a5c9347-5e3d-4c99-a8ac-d7f55ddb7ac0">
+                            <field name="TEXT"></field>
+                          </block>
+                        </value>
+                        <field name="ID">lux</field>
+                        <field name="VX">100</field>
+                        <field name="VY">300</field>
+                        <next>
+                          <block type="shape_set_color" id="f9ea1054-9421-4d5d-aea2-9c7c45ba2b9c">
+                            <value name="COLOR">
+                              <block type="colour_picker" id="5ce75589-f642-4683-9fc9-2702b7f586a8">
+                                <field name="COLOUR">#ff0000</field>
+                              </block>
+                            </value>
+                            <field name="ID">lux</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_loop" id="2a756923-461b-48f0-8e68-8f36eda55c54" x="372.0" y="-434.0">
+    <statement name="DO">
+      <block type="period_time_on" id="bfcce381-cb4a-45a2-9a3c-373fe5025163">
+        <value name="TIMES">
+          <block type="math_number" id="bfa4ee5b-3ac0-4b6e-abdf-d07352829c2d">
+            <field name="NUM">500</field>
+          </block>
+        </value>
+        <field name="ID">ltm</field>
+        <statement name="DO">
+          <block type="arduino_i2c_read" id="83d601dc-c15a-4454-97ea-c610a777e9ef">
+            <field name="ID">23</field>
+            <field name="SIZE">1</field>
+          </block>
+        </statement>
+        <next>
+          <block type="delay" id="4ec611a9-3364-4986-a613-d5c5a51b820c">
+            <field name="TIME">100</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="848657da-cd28-4ebb-b7e2-c0f4de7b0d85" x="-73.0" y="443.0">
+    <field name="EVENT">0</field>
+    <statement name="DO">
+      <block type="math_change" id="01a13452-5609-4fbd-8876-9954b6f27923">
+        <value name="DELTA">
+          <block type="math_number" id="02f7f642-fde1-4b93-9451-6739b5e02c95">
+            <field name="NUM">-2</field>
+          </block>
+        </value>
+        <field name="VAR">item</field>
+        <next>
+          <block type="procedures_callnoreturn" id="725b9a06-f71b-48f2-afab-fb7aeb723330">
+            <mutation name="dsp" xmlns="">
+              <arg name="d0" />
+            </mutation>
+            <value name="ARG0">
+              <block type="variables_get" id="7787a2f1-f205-4337-8ee0-ecc991bb03cf">
+                <field name="VAR">lux</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="03ba5431-637f-497c-90e4-34ff594f2cbd" x="255.0" y="487.0">
+    <mutation xmlns="">
+      <arg name="d0" />
+    </mutation>
+    <field name="NAME">dsp</field>
+    <statement name="STACK">
+      <block type="text_print" id="75a3d198-eb7b-4501-88d0-f55b2ec291c9">
+        <value name="TEXT">
+          <shadow type="text" id="360c26c6-e714-498b-a355-8bfabe7be16e">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="variables_get" id="422a921e-85a1-4d92-a5e1-1f1a3dc75275">
+            <field name="VAR">d0</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defreturn" id="a2b71135-efda-4967-9779-d76985f5df9c" x="-71.0" y="214.0">
+    <mutation xmlns="">
+      <arg name="r_p0" />
+    </mutation>
+    <field name="NAME">calc_lux</field>
+    <value name="RETURN">
+      <block type="math_arithmetic" id="5ffe12c9-0a33-4ffa-b3c1-71154231113f">
+        <value name="A">
+          <shadow type="math_number" id="d03e28dc-3497-48e1-99dd-f7165134b85f">
+            <field name="NUM">1</field>
+          </shadow>
+          <block type="variables_get" id="ee335a8b-4c6d-4076-9b72-5357f67e5d7b">
+            <field name="VAR">r_p0</field>
+          </block>
+        </value>
+        <value name="B">
+          <shadow type="math_number" id="3467b8a8-88dd-400b-8476-9236ac6c20f9">
+            <field name="NUM">1</field>
+          </shadow>
+          <block type="math_float" id="647280c5-941a-4df2-9b1b-3b19b54410d6">
+            <field name="NUM">1.2</field>
+          </block>
+        </value>
+        <field name="OP">DIVIDE</field>
+      </block>
+    </value>
+  </block>
+  <block type="event_i2c" id="3e3a5280-5573-481a-9fd7-14cff62baf24" x="323.0" y="-78.0">
+    <field name="IID">23</field>
+    <statement name="DO">
+      <block type="variables_set" id="e8ec5e32-a049-4b5d-a432-ca5d8b66bf19">
+        <value name="VALUE">
+          <block type="procedures_callreturn" id="2f976345-b8c6-4d22-8ac1-fc8d2cd98063">
+            <mutation name="calc_lux" xmlns="">
+              <arg name="r_p0" />
+            </mutation>
+            <value name="ARG0">
+              <block type="variables_get" id="813a3cd7-5966-4ed1-9147-20f08484288e">
+                <field name="VAR">ireg</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <field name="VAR">lux</field>
+        <next>
+          <block type="variables_set" id="cdca144c-bb6d-4cba-8e9b-777180fff892">
+            <value name="VALUE">
+              <block type="fmt_float2string" id="a0d0f96c-808f-491e-ba4e-293631975762">
+                <value name="VALUE">
+                  <block type="variables_get" id="ebce6802-c480-4fa6-8c53-6946f28e1284">
+                    <field name="VAR">lux</field>
+                  </block>
+                </value>
+                <field name="FP_LENG">2</field>
+              </block>
+            </value>
+            <field name="VAR">text</field>
+            <next>
+              <block type="text_append" id="be508e3d-c715-4270-984c-1eff67cd59a4">
+                <value name="TEXT">
+                  <shadow type="text" id="2c0dc70d-04e7-49ff-8ed2-bd541b228e95">
+                    <field name="TEXT"> [lux]</field>
+                  </shadow>
+                </value>
+                <field name="VAR">text</field>
+                <next>
+                  <block type="set_drawtext" id="b39f302f-b982-4051-a206-ce528be9b30c">
+                    <value name="TEXT">
+                      <block type="variables_get" id="ed655bfd-994b-437c-af7c-37ecea074110">
+                        <field name="VAR">text</field>
+                      </block>
+                    </value>
+                    <field name="ID">lux</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

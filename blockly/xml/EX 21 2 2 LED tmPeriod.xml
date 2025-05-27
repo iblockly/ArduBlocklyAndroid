@@ -1,0 +1,92 @@
+
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_setup" id="8119a089-2541-40d4-ae61-b834cf46f797" x="-144.0" y="-742.0">
+    <statement name="DO">
+      <block type="variables_set" id="70d29d49-c0f8-4565-8f97-ce0a184af992">
+        <value name="VALUE">
+          <block type="math_number" id="3c77413e-45de-42a4-a54a-bc5d07f32351">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+        <field name="VAR">count</field>
+        <next>
+          <block type="arduino_set_digital" id="9091acab-cecb-4801-b115-41aeeb5aa1f7">
+            <field name="PORTD">13</field>
+            <field name="OUT">0</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_loop" id="1f06bde4-8aa9-4f5d-9059-d48395bcdc5c" x="-146.0" y="-546.0">
+    <statement name="DO">
+      <block type="period_time_on" id="3f265cbc-dd74-40ab-92ab-cc12dd344e13">
+        <value name="TIMES">
+          <block type="math_number" id="4d46efcb-1911-4856-9544-c04b261b5928">
+            <field name="NUM">500</field>
+          </block>
+        </value>
+        <field name="ID">tm05</field>
+        <statement name="DO">
+          <block type="controls_ifelse" id="cd6fbc61-6ae2-4aa6-8711-0a88b7d820c9">
+            <value name="IF0">
+              <block type="math_number_property" id="81df05c0-d1b2-4f22-82eb-49ca5417ed68">
+                <value name="NUMBER_TO_CHECK">
+                  <block type="variables_get" id="7b936a56-c8bc-4e3d-82cc-faff19ca7493">
+                    <field name="VAR">count</field>
+                  </block>
+                </value>
+                <field name="PROPERTY">EVEN</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="arduino_set_digital" id="ed3aee4f-2375-4e37-8dbb-12327b9caa3c">
+                <field name="PORTD">13</field>
+                <field name="OUT">0</field>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="arduino_set_digital" id="b1ae2616-45a9-40b5-88a3-8d728699c3f6">
+                <field name="PORTD">13</field>
+                <field name="OUT">1</field>
+              </block>
+            </statement>
+            <next>
+              <block type="math_change" id="533d2239-30fe-4bf8-9f18-5aef3d9d894c">
+                <value name="DELTA">
+                  <block type="math_number" id="bf69b198-495b-43dc-aec7-9b9c63dc6fec">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <field name="VAR">count</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="period_time_on" id="b96b41f6-1f96-4dcb-bf39-378a97c2800a">
+            <value name="TIMES">
+              <block type="math_number" id="83d2f553-db16-4be0-a4ad-db2b4333f17f">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
+            <field name="ID">tm1</field>
+            <statement name="DO">
+              <block type="text_print" id="f1624af3-cce4-4cb6-b43b-4c8036c643a0">
+                <value name="TEXT">
+                  <shadow type="text" id="612247a0-8a49-4c6a-8164-5038d755f524">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="tm_current" id="56403ea1-6634-4597-92cd-1dacbcb1ddd5">
+                    <field name="HOUR">12</field>
+                    <field name="SEC">true</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

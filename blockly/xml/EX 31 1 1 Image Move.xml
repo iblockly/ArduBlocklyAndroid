@@ -1,0 +1,139 @@
+
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_setup" id="e942b8ec-9e1e-4bac-bb47-aab71920eda9" x="239.0" y="-1856.0">
+    <statement name="DO">
+      <block type="variables_set" id="0122bbd7-178e-4157-91f2-37f5a914115e">
+        <value name="VALUE">
+          <block type="math_number" id="b89d5805-b4fb-4466-887a-3fc0e998f033">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <field name="VAR">x</field>
+        <next>
+          <block type="variables_set" id="526929ce-f7d7-4cbc-9811-8542cef09406">
+            <value name="VALUE">
+              <block type="math_number" id="f76dba7d-8da2-49fa-a688-f4c277c8e860">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+            <field name="VAR">y</field>
+            <next>
+              <block type="object_move_vpoint" id="d13e4159-a67e-4bb6-8885-5fe7d251cfbf">
+                <field name="POINTX">x</field>
+                <field name="POINTY">y</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_loop" id="50713cce-7ff3-4601-9611-5e1c09dd67f6" x="556.0" y="-1872.0">
+    <statement name="DO">
+      <block type="delay" id="c49222a2-641d-45ec-8a64-798f49106e9c">
+        <field name="TIME">10000</field>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="225f2cc6-4419-4f8f-9335-65aefd761688" x="284.0" y="-1106.0">
+    <field name="EVENT">3</field>
+    <statement name="DO">
+      <block type="math_change" id="6a9b338a-9ac4-4283-92f1-10da8524dc97">
+        <value name="DELTA">
+          <block type="math_number" id="8bef7f19-54ad-427a-b940-0179fe634003">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <field name="VAR">y</field>
+        <next>
+          <block type="object_move_vpoint" id="55d646cc-481f-4b32-ab31-43f8e4704d1a">
+            <field name="POINTX">x</field>
+            <field name="POINTY">y</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="4de45283-e654-459b-bf8a-a94ea94b45ac" x="284.0" y="-1508.0">
+    <field name="EVENT">0</field>
+    <statement name="DO">
+      <block type="math_change" id="0a6d2347-23e5-47de-9c4d-df9acb1ac07f">
+        <value name="DELTA">
+          <block type="math_number" id="c217c6aa-52e8-4ef9-b52f-782b16861f70">
+            <field name="NUM">-10</field>
+          </block>
+        </value>
+        <field name="VAR">y</field>
+        <next>
+          <block type="object_move_vpoint" id="30e661ab-a7d6-495f-bbeb-af6c9b036d91">
+            <field name="POINTX">x</field>
+            <field name="POINTY">y</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="647c244b-a431-4880-8e02-c9330a013b90" x="135.0" y="-1320.0">
+    <field name="EVENT">1</field>
+    <statement name="DO">
+      <block type="math_change" id="f8febd12-f675-467c-8249-9e1935b1ebbc">
+        <value name="DELTA">
+          <block type="math_number" id="2df6c270-8fa5-407e-8eb1-15096d09b68b">
+            <field name="NUM">-10</field>
+          </block>
+        </value>
+        <field name="VAR">x</field>
+        <next>
+          <block type="object_move_vpoint" id="b771dfed-0dbb-4cba-8077-cbd8ee5d53d3">
+            <field name="POINTX">x</field>
+            <field name="POINTY">y</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="12319b74-4b1d-47e3-a92f-3020a6ca4d4c" x="520.0" y="-1324.0">
+    <field name="EVENT">2</field>
+    <statement name="DO">
+      <block type="math_change" id="a5a60e07-6ed7-48a8-bc43-1f6a4cbdbf94">
+        <value name="DELTA">
+          <block type="math_number" id="587c3c4d-a8ac-4f3a-8725-4c5eaeb548c0">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <field name="VAR">x</field>
+        <next>
+          <block type="object_move_vpoint" id="8e71c5de-b065-443c-a287-3e6dece8abdd">
+            <field name="POINTX">x</field>
+            <field name="POINTY">y</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="event_menu" id="2bdf81a7-fc4d-4f94-adf0-3a2e57368a44" x="557.0" y="-1714.0">
+    <field name="EVENT">1</field>
+    <statement name="DO">
+      <block type="text_print" id="7d7fe4d6-5738-4835-840b-d045d06843e6">
+        <value name="TEXT">
+          <shadow type="text" id="bb974270-62d6-4b06-8aae-673a45556650">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="variable_link" id="a723a6a4-ed13-4300-a63c-0de64a250cdf">
+            <value name="VALUE">
+              <block type="text_next" id="3cf33c99-11b4-4e96-89df-dbc0db6bc095">
+                <value name="NEXT">
+                  <block type="variables_get" id="c46540b5-51ee-43f9-83ce-df94fd5e9b90">
+                    <field name="VAR">y</field>
+                  </block>
+                </value>
+                <field name="TEXT">,</field>
+              </block>
+            </value>
+            <field name="VAR">x</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

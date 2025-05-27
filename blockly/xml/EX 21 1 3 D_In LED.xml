@@ -1,0 +1,49 @@
+
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_setup" id="bf86d30a-4ae9-4407-8c8e-67daded6f847" x="69.0" y="23.0">
+    <statement name="DO">
+      <block type="arduino_set_digital" id="5678e5eb-1970-4480-8f83-f9d7b1899e9c">
+        <field name="PORTD">13</field>
+        <field name="OUT">0</field>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_loop" id="481ff331-edce-4090-80ba-1a770a5753ee" x="69.0" y="219.0">
+    <statement name="DO">
+      <block type="controls_ifelse" id="b2031881-fa93-4b4b-8695-d5ce85dc5eab">
+        <value name="IF0">
+          <block type="logic_compare" id="36624b4d-a455-465f-bf3b-05c42fdbc533">
+            <value name="A">
+              <block type="arduino_get_digital" id="03943ddd-0679-4ed3-8a62-ef8dacbd9d0b">
+                <field name="PORTD">7</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="91421361-756a-406c-a8f4-044454ac55a7">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <field name="OP">GT</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="arduino_set_digital" id="66af3c41-eced-4aa9-b769-478cbc14bff1">
+            <field name="PORTD">13</field>
+            <field name="OUT">1</field>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="arduino_set_digital" id="ac4c3d4d-cf29-43e5-8993-9eb853c43738">
+            <field name="PORTD">13</field>
+            <field name="OUT">0</field>
+          </block>
+        </statement>
+        <next>
+          <block type="delay" id="8e6000af-4d6e-4258-baed-26aa425354f7">
+            <field name="TIME">100</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

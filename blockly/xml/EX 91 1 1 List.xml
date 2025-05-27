@@ -1,0 +1,218 @@
+
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_setup" id="ed2fc0a3-4ac7-446a-a150-6138db08cc4b" x="45.0" y="-454.0">
+    <statement name="DO">
+      <block type="variables_set" id="416965e5-28f4-4c6c-b0a8-595984cc1060">
+        <value name="VALUE">
+          <block type="math_number" id="3db9e573-e26f-4219-b60a-f9ce25e4443a">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+        <field name="VAR">item</field>
+        <next>
+          <block type="variables_set" id="2df9de12-d55a-4548-94ae-b2d55267200a">
+            <value name="VALUE">
+              <block type="lists_create_empty" id="e680e086-5c9b-4e8c-914f-3f68adb30700" />
+            </value>
+            <field name="VAR">list</field>
+            <next>
+              <block type="draw_text" id="12bdca54-98d6-4392-8bd0-ca86b86ab9fc">
+                <value name="TEXT">
+                  <block type="text" id="a5559fdf-9684-45a5-ad30-2d1a7ae8b841">
+                    <field name="TEXT"> </field>
+                  </block>
+                </value>
+                <field name="ID">lst</field>
+                <field name="VX">100</field>
+                <field name="VY">300</field>
+                <next>
+                  <block type="shape_color_font" id="aaaeee55-4759-4dfe-a117-a4a31bf53820">
+                    <value name="COLOR">
+                      <block type="colour_picker" id="b11b005d-baad-4985-bd1c-7e5e401b3335">
+                        <field name="COLOUR">#ff0000</field>
+                      </block>
+                    </value>
+                    <field name="ID">lst</field>
+                    <value name="FONT">
+                      <block type="object_font_in" id="78e7025f-c8a9-4b55-bf29-88720629dbad">
+                        <value name="FONTSIZE">
+                          <shadow type="math_number" id="47fcace4-9a13-40b0-8052-5e4fdba01927">
+                            <field name="NUM">30</field>
+                          </shadow>
+                        </value>
+                        <field name="FONT">Arial</field>
+                        <field name="FONTSTYLE">bold</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_loop" id="8ea38771-c9d7-4834-8ed3-39fc2529a263" x="47.0" y="-619.0">
+    <statement name="DO">
+      <block type="delay" id="da28d992-3049-4286-8d9a-be8ac1b1e8bb">
+        <field name="TIME">10000</field>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="f80352f6-083d-4708-a156-e9ba05a8f322" x="44.0" y="-124.0">
+    <field name="EVENT">0</field>
+    <statement name="DO">
+      <block type="math_change" id="b87afee9-de71-4b8d-8876-8fb41dc4ff21">
+        <value name="DELTA">
+          <block type="math_number" id="4b71b65b-b017-49d3-91fb-f7b3f99b01c6">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <field name="VAR">item</field>
+        <next>
+          <block type="variables_set" id="70bf2ca9-bcbd-4b3a-a6e1-5c6fdbe35678">
+            <value name="VALUE">
+              <block type="lists_length" id="bc4ed5b7-c16f-4da9-8836-bfc22ef09dd0">
+                <value name="VALUE">
+                  <block type="variables_get" id="d812a8df-4d72-4708-854c-93ecf49c66c7">
+                    <field name="VAR">list</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <field name="VAR">x</field>
+            <next>
+              <block type="lists_setIndex" id="b06da672-23ff-48c7-9b2b-a801b921cb9f">
+                <value name="LIST">
+                  <block type="variables_get" id="d0fe7f94-5657-4b92-8731-58c6333ef3a2">
+                    <field name="VAR">list</field>
+                  </block>
+                </value>
+                <value name="AT">
+                  <block type="variables_get" id="ac946fa9-b444-4a6f-b532-ffef8809d851">
+                    <field name="VAR">x</field>
+                  </block>
+                </value>
+                <field name="MODE">SET</field>
+                <field name="WHERE">FROM_START</field>
+                <value name="TO">
+                  <block type="variables_get" id="626f08c1-0a9a-4bac-8184-3d61a7628486">
+                    <field name="VAR">item</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="text_print" id="6520496d-bb9d-47f2-b3fb-4895478d8a41">
+                    <value name="TEXT">
+                      <shadow type="text" id="e7082548-3c38-4360-ad4c-e995a132fba6">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="lists_at" id="9bc5b6e7-0fe5-4e6a-95f0-b3ddc5e41cb6">
+                        <value name="LIST">
+                          <block type="variables_get" id="0e601dc2-2e64-454a-8d89-6bc4e686f00b">
+                            <field name="VAR">list</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="variables_get" id="4dff199b-48a9-4ca4-af46-f7785cbd990a">
+                            <field name="VAR">x</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="6911dcb7-5ebf-4c0a-8dd6-923e6d8ae83b" x="46.0" y="260.0">
+    <field name="EVENT">1</field>
+    <statement name="DO">
+      <block type="variables_set" id="cd1890ad-d676-4f59-ba3b-1f58187541d0">
+        <value name="VALUE">
+          <block type="text" id="f401d958-6c30-4dca-a94c-c3735a0adcb4">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <field name="VAR">text</field>
+        <next>
+          <block type="controls_forEach" id="e3ab855c-48f7-4c62-a037-953ebe78bfaf">
+            <value name="LIST">
+              <block type="variables_get" id="30058b09-cedc-4fee-a9ca-2a0b880c0b5a">
+                <field name="VAR">list</field>
+              </block>
+            </value>
+            <field name="VAR">i</field>
+            <statement name="DO">
+              <block type="text_append" id="429f000c-1216-4c04-8afb-b9ef88c3b2d5">
+                <value name="TEXT">
+                  <shadow type="text" id="e610e561-5125-44cd-a329-05a854f7820c">
+                    <field name="TEXT"></field>
+                  </shadow>
+                  <block type="variable_link" id="8e962985-90eb-4b5a-86b0-e4f27a67c72d">
+                    <value name="VALUE">
+                      <block type="text" id="dd4f0183-3004-4c03-9063-6e0a40ae09f2">
+                        <field name="TEXT"> </field>
+                      </block>
+                    </value>
+                    <field name="VAR">i</field>
+                  </block>
+                </value>
+                <field name="VAR">text</field>
+                <next>
+                  <block type="text_print" id="f7ead29c-3c24-436e-9724-03766193a907">
+                    <value name="TEXT">
+                      <shadow type="text" id="afb8ea21-407e-4eb8-8ca0-5f91ef4b419c">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="text_next" id="65bbf727-be15-4318-97ea-6bdc15339ca1">
+                        <value name="NEXT">
+                          <block type="variable_link" id="17b3b95f-4580-44f6-81f2-78195074dc58">
+                            <value name="VALUE">
+                              <block type="text_next" id="a42055d9-81b5-4ce1-a181-ec0ece83ce95">
+                                <value name="NEXT">
+                                  <block type="variables_get" id="8a8866fe-839a-4504-a06f-8b7ccff52c8e">
+                                    <field name="VAR">text</field>
+                                  </block>
+                                </value>
+                                <field name="TEXT">: </field>
+                              </block>
+                            </value>
+                            <field name="VAR">i</field>
+                          </block>
+                        </value>
+                        <field name="TEXT">i=</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="set_drawtext" id="495c5dd2-8895-46f2-99f8-4ff9310f2159">
+                <value name="TEXT">
+                  <block type="variables_get" id="019f2390-4efb-432d-990e-60f437b0fbc7">
+                    <field name="VAR">text</field>
+                  </block>
+                </value>
+                <field name="ID">lst</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="variables_set" id="166999d9-646e-47bd-8eb4-956b0ee16d7a" x="596.0" y="1189.0">
+    <value name="VALUE">
+      <block type="math_number" id="6090df14-95df-4b96-b086-1ce2ca92658e">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <field name="VAR">x</field>
+  </block>
+</xml>

@@ -1,0 +1,74 @@
+
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_setup" id="de626bc6-53d1-4a9b-8ddc-952d6ec5b02b" x="23.0" y="-715.0">
+    <statement name="DO">
+      <block type="variables_set" id="ade61fb7-7800-4733-8258-c9724017f6c7">
+        <value name="VALUE">
+          <block type="math_number" id="c01f287c-9afd-4fb2-8f41-f3f66666077f">
+            <field name="NUM">1000</field>
+          </block>
+        </value>
+        <field name="VAR">item</field>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_loop" id="6f54a07a-ba20-4a8d-95cc-da3afad743fb" x="22.0" y="-550.0">
+    <statement name="DO">
+      <block type="period_time_on" id="234bb283-ba97-4786-917c-c1814454f99c">
+        <value name="TIMES">
+          <block type="variables_get" id="fc432f9f-e235-4439-a2d9-2461ba768be6">
+            <field name="VAR">item</field>
+          </block>
+        </value>
+        <field name="ID">stm</field>
+        <statement name="DO">
+          <block type="sound_play" id="defae00a-46f0-40d8-8e02-cb89ebec9ee6">
+            <field name="SNDFILE">2</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="9432dad1-6dbd-4422-bd90-57bb62477e55" x="21.0" y="-7.0">
+    <field name="EVENT">1</field>
+    <statement name="DO">
+      <block type="sound_play" id="6258c51d-273e-4210-9086-25cdfdb0d711">
+        <field name="SNDFILE">0</field>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="41490f3c-fadd-4f40-98f5-e3b064a13d96" x="235.0" y="-5.0">
+    <field name="EVENT">2</field>
+    <statement name="DO">
+      <block type="sound_play" id="10e7fc52-6b62-412b-9f90-e79254471598">
+        <field name="SNDFILE">1</field>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="3cade3fe-761a-4b46-b299-636c9c4f169d" x="22.0" y="-317.0">
+    <field name="EVENT">0</field>
+    <statement name="DO">
+      <block type="math_change" id="c39c161d-510a-4b33-b8a5-7df37394ae2e">
+        <value name="DELTA">
+          <block type="math_number" id="02fced82-f5cb-4c59-b4b4-46d9cf02832e">
+            <field name="NUM">-100</field>
+          </block>
+        </value>
+        <field name="VAR">item</field>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="44f584c5-e36a-4742-821d-b35ccf74da0d" x="24.0" y="-173.0">
+    <field name="EVENT">3</field>
+    <statement name="DO">
+      <block type="math_change" id="d1e057b9-037d-48f0-a0c9-83cf376ee102">
+        <value name="DELTA">
+          <block type="math_number" id="14fc1696-3c5a-42db-babc-6d26661b5218">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <field name="VAR">item</field>
+      </block>
+    </statement>
+  </block>
+</xml>

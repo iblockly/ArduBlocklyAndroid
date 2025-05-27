@@ -1,0 +1,182 @@
+
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_loop" id="b1af6ed1-6c90-45ad-bcaa-b9eb0a0fc2ed" x="360.0" y="-23.0">
+    <statement name="DO">
+      <block type="delay" id="c2ab8628-5344-4210-a398-4a6e4a221b35">
+        <field name="TIME">10000</field>
+      </block>
+    </statement>
+  </block>
+  <block type="event_joystick" id="97718feb-aead-43ed-9c47-fa4dd5f92e83" x="47.0" y="185.0">
+    <statement name="DO">
+      <block type="variables_set" id="dab75a28-72b3-49ce-9487-8da0b3a3d390">
+        <value name="VALUE">
+          <block type="math_arithmetic" id="f9e48277-2060-4abc-a1ac-7418322aa904">
+            <value name="A">
+              <shadow type="math_number" id="ce1f94cc-e92d-4982-be06-70102030a68a">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="ce6cf3c1-b15f-47a9-ac73-7dc5f835f28f">
+                <field name="VAR">x</field>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="bbfa712c-3120-4a5b-84a2-f101ff23cda4">
+                <field name="NUM">150</field>
+              </shadow>
+            </value>
+            <field name="OP">ADD</field>
+          </block>
+        </value>
+        <field name="VAR">xx</field>
+        <next>
+          <block type="variables_set" id="c03ccf96-f19e-4ed9-a987-4670999482b8">
+            <value name="VALUE">
+              <block type="math_arithmetic" id="71f4fee6-db23-4ca6-a773-3a6fcb7084a7">
+                <value name="A">
+                  <shadow type="math_number" id="b563e3df-2a08-457b-974d-e113cb4d991b">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="2aea5a13-5a05-4017-867d-56060857c106">
+                    <field name="VAR">y</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="eeb516d6-faf5-4e29-b122-3d0915460ecd">
+                    <field name="NUM">150</field>
+                  </shadow>
+                </value>
+                <field name="OP">ADD</field>
+              </block>
+            </value>
+            <field name="VAR">yy</field>
+            <next>
+              <block type="object_move_vpoint" id="fd8323a0-2b55-4f9e-86bc-a6ce3f3ee369">
+                <field name="POINTX">xx</field>
+                <field name="POINTY">yy</field>
+                <next>
+                  <block type="text_print" id="fd5a5857-87e4-4054-a9ce-cd7b1c00f29f">
+                    <value name="TEXT">
+                      <shadow type="text" id="5ccdecf7-38bb-4a79-94bd-cbed1d12d3e8">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="variable_link" id="916ebe2c-e03b-4a69-ba36-82f3c6847126">
+                        <value name="VALUE">
+                          <block type="text_next" id="0ea0319a-a013-4404-8998-204c514c9844">
+                            <value name="NEXT">
+                              <block type="variables_get" id="29c727a9-bf80-4820-9167-b8c612de3d5f">
+                                <field name="VAR">yy</field>
+                              </block>
+                            </value>
+                            <field name="TEXT">,</field>
+                          </block>
+                        </value>
+                        <field name="VAR">xx</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="draw_text" id="4d82f343-cb87-4e98-a742-d971067406c7">
+                        <value name="TEXT">
+                          <block type="text_next" id="34116b70-e6d6-4ee0-bda9-f528a8851005">
+                            <value name="NEXT">
+                              <block type="variable_link" id="c96debaf-86f6-4977-8463-bf724a101f7e">
+                                <value name="VALUE">
+                                  <block type="text_next" id="ae31294f-f512-483e-b71f-086e1b43be11">
+                                    <value name="NEXT">
+                                      <block type="variables_get" id="c0ae980d-27ed-4013-a0d6-c6e8e1f563c1">
+                                        <field name="VAR">y</field>
+                                      </block>
+                                    </value>
+                                    <field name="TEXT">,</field>
+                                  </block>
+                                </value>
+                                <field name="VAR">x</field>
+                              </block>
+                            </value>
+                            <field name="TEXT">xy: </field>
+                          </block>
+                        </value>
+                        <field name="ID">p</field>
+                        <field name="VX">50</field>
+                        <field name="VY">150</field>
+                        <next>
+                          <block type="draw_text" id="0ef1d9d5-5f7b-4b7a-afea-444d6718d1ec">
+                            <value name="TEXT">
+                              <block type="variable_link" id="01a2c716-7b54-403e-b08d-4cbcabf6823d">
+                                <value name="VALUE">
+                                  <block type="text_next" id="553048b3-b535-444a-a63a-ae27f8846062">
+                                    <value name="NEXT">
+                                      <block type="variables_get" id="42a7600a-fcc8-4d40-bfe3-06a37dbf66c3">
+                                        <field name="VAR">a</field>
+                                      </block>
+                                    </value>
+                                    <field name="TEXT">,</field>
+                                  </block>
+                                </value>
+                                <field name="VAR">d</field>
+                              </block>
+                            </value>
+                            <field name="ID">r</field>
+                            <field name="VX">50</field>
+                            <field name="VY">200</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="event_button" id="c537f86f-9b39-40b5-b871-377fd1274b93" x="44.0" y="617.0">
+    <field name="EVENT">0</field>
+    <statement name="DO">
+      <block type="text_print" id="913f0d0e-f249-4bf7-87c2-d786d52f5617">
+        <value name="TEXT">
+          <shadow type="text" id="41e84b28-92fa-4633-b08e-020ef2e72a07">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="variable_link" id="24940834-8a74-4dee-8816-00a269ee940f">
+            <value name="VALUE">
+              <block type="text_next" id="ad794ab9-c94e-4367-a30c-3150455662ed">
+                <value name="NEXT">
+                  <block type="variables_get" id="d9724298-5d61-44ff-803e-69a50de235eb">
+                    <field name="VAR">a</field>
+                  </block>
+                </value>
+                <field name="TEXT">,</field>
+              </block>
+            </value>
+            <field name="VAR">d</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_setup" id="8f35273b-2c8b-42d2-8738-a21e434f0962" x="47.0" y="-22.0">
+    <statement name="DO">
+      <block type="shape_set_color" id="8eb101ea-8a18-4900-94cc-ef3386cf1f56">
+        <value name="COLOR">
+          <block type="colour_picker" id="bd6d6b78-b5a1-4836-8af4-781aaada9df6">
+            <field name="COLOUR">#cc0000</field>
+          </block>
+        </value>
+        <field name="ID">p</field>
+        <next>
+          <block type="shape_set_color" id="14dfcb0c-c276-49eb-8942-f8c8e3d7a956">
+            <value name="COLOR">
+              <block type="colour_picker" id="aa6a8fee-efec-4da1-bec9-84e23d02b7c7">
+                <field name="COLOUR">#009900</field>
+              </block>
+            </value>
+            <field name="ID">r</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
