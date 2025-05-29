@@ -7,13 +7,18 @@ Android app using Arduino-Blockly.
 # 설명서 및 파일
 사용 설명서:
 -	documents/Blockly+Arduino 블럭 코드 사용설명서.pdf
+- documents/따라하기 Blockly+Arduino앱.pdf
 
 앱:
--	apk 설치파일: android/apk/arduino_blockly.apk
+-	apk 설치파일: android/apk/arduino_blockly.apk <br />
+  앱 설치를 위한 파일로 안드로이드에서 ‘apk 설치’를 통해 앱을 설치할 수 있다.
 
-앱 설치를 위한 파일로 안드로이드에서 ‘apk 설치’를 통해 앱을 설치할 수 있다.
+아두이노:
+- ino 실행 파일: arduino/ArduBlockly/ArduBlockly.ino
 
+전체적인 사용이해는 '따라하기 Blockly+Arduino앱.pdf' 문서를 통해 쉽게 이해할 수 있다.
 
+<br />
 
 # 전체 시스템 구성
 
