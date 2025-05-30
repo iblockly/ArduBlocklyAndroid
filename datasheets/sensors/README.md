@@ -17,4 +17,10 @@
 
 - PeterEmbedded: https://github.com/PeterEmbedded/BH1750FVI
 
+- RobTillaart:  https://github.com/RobTillaart/BH1750FVI_RT
+
+
+#### BH1750
+
+- claws: https://github.com/claws/BH1750
 
