@@ -10,7 +10,7 @@ android_blockly.apk 파일을 윈도우 탐색기로 폰에 복사할 수 있다
 복사 후 설치하면 앱을 실행할 수 있다.
 
 
-<img src="assets/images/AndroidApp_Install.png" width="70%" height="70%"  alt="Install App" />
+<img src="../../assets/images/AndroidApp_Install.png" width="70%" height="70%"  alt="AndroidApp_Install" />
 
 
 
