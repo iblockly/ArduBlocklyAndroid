@@ -24,6 +24,7 @@
 ## 참고 블로그 
 
 BH1750FVI (GY-30, 302) ambient light sensor
+
 https://wolles-elektronikkiste.de/en/bh1750fvi-gy-30-302-ambient-light-sensor
 
 <img src="BH1750FVI_Wiring.png" width="70%" height="70%"  alt="BH1750FVI_Wiring" />
