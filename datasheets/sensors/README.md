@@ -15,5 +15,6 @@
 
 ### BH1750FVI 아두이노 라이브러리
 
- https://github.com/PeterEmbedded/BH1750FVI
+- PeterEmbedded: https://github.com/PeterEmbedded/BH1750FVI
+
 
