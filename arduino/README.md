@@ -13,7 +13,7 @@ documents/따라하기 Blockly+Arduino앱.pdf 설명서를 참고하여 파일�
 
 아두이노 업로드는 'Arduino IDE'을 활용하여 업로드 한다. 
 
-<img src="assets/images/ArudinoCodeUpload.png" width="70%" height="70%"  alt="ArudinoCodeUpload" />
+<img src="../assets/images/ArudinoCodeUpload.png" width="70%" height="70%"  alt="ArudinoCodeUpload" />
 
 
 ## 블루투스 모듈 설정 
