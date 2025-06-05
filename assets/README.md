@@ -1,4 +1,7 @@
-참고 이미지.
+
+# 참고 이미지
+
+폴더: images - 설명서 및 기타 참고 이미지
 
 <img src="images/AndroidBlocklyCodeProc.png" width="150" height="50"/> &nbsp; <img src="images/ArduBlockly_SysConfig.png" width="150" height="50"/>
 
