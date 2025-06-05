@@ -9,8 +9,8 @@
 
 앱 설치 실행화면
 
-<img src="images/ArduinoUNO-AndroidApp_Install.png" width="40" height="80"/>
-<img src="images/App_ArduinoBlockly_BC.png" width="40" height="80"/> &nbsp; <img src="images/App_ArduinoBlockly_R1.jpg" width="40" height="80"/>
+<img src="images/AndroidApp_Install.png" width="40" height="80"/>
+<img src="images/App_ArduinoBlockly_BC.jpg" width="40" height="80"/> &nbsp; <img src="images/App_ArduinoBlockly_R1.jpg" width="40" height="80"/>
 
 
 아두이노
@@ -30,23 +30,23 @@
 
 블록코드 예
 
-<img src="images/ArduBlockly_block_code.jpg" width="50" height="100"/> &nbsp; <img src="images/ArduinoBlockly_run_st.jpg" width="50" height="100"/>
+<img src="images/ArduBlockly_block_code.jpg" width="50" height="80"/> &nbsp; <img src="images/ArduinoBlockly_run_st.jpg" width="50" height="100"/>
 
 <img src="images/blockly_exam_init.jpg" width="60" height="50"/> &nbsp; <img src="images/blockly_exam_joystick.jpg" width="70" height="50"/>
  &nbsp; <img src="images/blockly_exam_loop.jpg" width="70" height="50"/>
 
-<img src="images/charbox_color_time.png" width="50" height="100"/> &nbsp; 
+<img src="images/charbox_color_time.png" width="50" height="80"/> &nbsp; 
 <img src="images/charbox_color_time_result.png" width="50" height="100"/>
 
-<img src="images/i2c_pwm_char.png" width="50" height="100"/> &nbsp; 
-<img src="images/i2c_read_reg.png" width="50" height="100"/>
+<img src="images/i2c_pwm_char.png" width="50" height="80"/> &nbsp; 
+<img src="images/i2c_read_reg.png" width="50" height="80"/>
 
-<img src="images/joystick_char_pos.png" width="50" height="100"/> &nbsp; 
-<img src="images/joystick_char_pos_result.jpg" width="50" height="100"/>
+<img src="images/joystick_char_pos.png" width="50" height="80"/> &nbsp; 
+<img src="images/joystick_char_pos_result.jpg" width="50" height="80"/>
 
-<img src="images/shape_attri_set.png" width="50" height="100"/> &nbsp; 
-<img src="images/shape_attri_set_run.png" width="50" height="100"/>
+<img src="images/shape_attri_set.png" width="50" height="80"/> &nbsp; 
+<img src="images/shape_attri_set_run.png" width="50" height="80"/>
 
-<img src="images/statebar_shape_joystick.png" width="50" height="100"/> &nbsp; 
-<img src="images/statebar_shape_joystick_run.png" width="50" height="100"/>
+<img src="images/statebar_shape_joystick.png" width="50" height="80"/> &nbsp; 
+<img src="images/statebar_shape_joystick_run.png" width="50" height="80"/>
 
