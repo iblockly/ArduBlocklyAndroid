@@ -59,8 +59,9 @@ AT-COMMAND 명령을 윈도우에서 블루투스로 전달하기 위한 다리 
 AT-Command 명령을 수행 전에 이 코드를 아두이노에 업로드 한다.
 
 
-<img src="../assets/images/Bt_Setting_AT.jpg" width="50%" height="50%"  alt="Bt_Setting_AT" />
-<img src="../assets/images/BT_HC-06_SetBAUD.jpg" width="50%" height="50%"  alt="BT_HC-06_SetBAUD" />
+<img src="../assets/images/Bt_Setting_AT.png" width="50%" height="50%"  alt="Bt_Setting_AT" />
+
+<img src="../assets/images/BT_HC-06_SetBAUD.png" width="50%" height="50%"  alt="BT_HC-06_SetBAUD" />
 
 HC-06 예
 ---------------+---------------------
