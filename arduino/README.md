@@ -28,7 +28,7 @@
 
 블루투스 설정을 위한 회로도로 앱을 동작하기 전에 블루투스를 설정하기 위한 회로도이다.
 
-<img src="../assets/images/Bt_Setting_Schematic.png" width="50%" height="50%"  alt="Bt_Setting_Schematic" />
+<img src="../assets/images/Bt_Setting_Schematic.jpg" width="50%" height="50%"  alt="Bt_Setting_Schematic" />
 
 * 사용설명서에 언급한 예제를 위한 아두이노와 부품의 연결 회로도 
 
