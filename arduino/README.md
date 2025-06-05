@@ -30,7 +30,7 @@ AT-COMMAND를 통해 블루투스 모듈의 다양한 설정을 할 수 있다.
 
 회로 연결:
 
-<img src="../assets/images/Bt_Setting_Schematic.png" width="50%" height="50%"  alt="Bt_Setting_Schematic" />
+<img src="../assets/images/Bt_Setting_Schematic.jpg" width="50%" height="50%"  alt="Bt_Setting_Schematic" />
 
 그림에서 아두이노 UNO와 MEGA 2560을 사용하여 윈도우 터미널에서 명령을 블루투스에 전달하는 역활을 하도록 연결한다.
 아래 그림은 FTDI 모듈을 통해 윈도우와 블루투스 간의 명령 전달 역활을 한다.
@@ -59,8 +59,8 @@ AT-COMMAND 명령을 윈도우에서 블루투스로 전달하기 위한 다리 
 AT-Command 명령을 수행 전에 이 코드를 아두이노에 업로드 한다.
 
 
-<img src="../assets/images/Bt_Setting_AT.png" width="50%" height="50%"  alt="Bt_Setting_AT" />
-<img src="../assets/images/BT_HC-06_SetBAUD.png" width="50%" height="50%"  alt="BT_HC-06_SetBAUD" />
+<img src="../assets/images/Bt_Setting_AT.jpg" width="50%" height="50%"  alt="Bt_Setting_AT" />
+<img src="../assets/images/BT_HC-06_SetBAUD.jpg" width="50%" height="50%"  alt="BT_HC-06_SetBAUD" />
 
 HC-06 예
 ---------------+---------------------
