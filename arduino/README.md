@@ -63,18 +63,18 @@ AT-Command 명령을 수행 전에 이 코드를 아두이노에 업로드 한�
 
 <img src="../assets/images/BT_HC-06_SetBAUD.png" width="50%" height="50%"  alt="BT_HC-06_SetBAUD" />
 
-HC-06 예
----------------+---------------------
- 명령             결과
----------------+---------------------
- AT          	 OK
- AT+VERSION    OKlinvorV1.8
- AT+BAUD8      OK115200
- AT+BAUD4      OK9600
- AT+PIN1234    OKsetPIN
- AT+NAMEHC-06  OKsetname	
----------------+---------------------
-
+HC-06 예<br />
+---------------+---------------------<br />
+ 명령        &#09;결과<br />
+---------------+---------------------<br />
+ AT          	&#09;OK<br />
+ AT+VERSION   &#09;OKlinvorV1.8<br />
+ AT+BAUD8     &#09;OK115200<br />
+ AT+BAUD4     &#09;OK9600<br />
+ AT+PIN1234   &#09;OKsetPIN<br />
+ AT+NAMEHC-06 &#09;OKsetname	<br />
+---------------+---------------------<br />
+<br />
 
 ### FTDI를 활용한 블루투스 설정
 
