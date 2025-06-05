@@ -20,8 +20,8 @@ struct _SI2C_DEVICE  {
     byte  seq;
     byte  state; 
 	 
-    // The sensor's I2C address, either 0x23 or 0x5C
-    uint8_t  regaddr;
+    
+    uint8_t  regaddr; // I2C address, 0x23,,0x5C,...
       
     uint8_t  data;
     uint8_t  datah;
@@ -40,7 +40,6 @@ class I2C {
 
 public:
 
-   // Class constructor
     I2C() {
         mpDevice = NULL;
         mpDeviceTail = NULL;
@@ -53,9 +52,6 @@ public:
    byte mdata;
    byte mdatah;
    
-   // Set the I2C address, turn on the sensor, set the mode
-   //void Begin(uint8_t Addr = Addr_LOW, uint8_t Mode = Continuous_H);
-
    static void begin()
    {
    	  Wire.begin(); // Start the I2C bus
@@ -63,38 +59,38 @@ public:
    
    SI2C_DEVICE *make_idevice(byte id,  byte ia)
    {
-   	  SI2C_DEVICE *pdev;
+      SI2C_DEVICE *pdev;
    	  
-   	  pdev = new SI2C_DEVICE;
-   	  pdev->next = NULL;
-   	  pdev->prev = NULL;
+      pdev = new SI2C_DEVICE;
+      pdev->next = NULL;
+      pdev->prev = NULL;
    	  	  
-   	  pdev->id = id;
-   	  pdev->iaddr = ia;
+      pdev->id = id;
+      pdev->iaddr = ia;
       pdev->seq = 0;
-			pdev->state = 0;
+	   pdev->state = 0;
 			
-   	  if (mpDevice) {
-   	  	  pdev->prev = mpDeviceTail;
-   	      mpDeviceTail->next = pdev;   	  	
-    	} else {  	  	
-   	  	  mpDevice = pdev;
-   	  }
-   	  mpDeviceTail = pdev;
-      return pdev; 
+      if (mpDevice) {
+     	   pdev->prev = mpDeviceTail;
+         mpDeviceTail->next = pdev;   	  	
+   	} else {  	  	
+     	  mpDevice = pdev;
+      }
+      mpDeviceTail = pdev;
+     return pdev; 
    }
    
    SI2C_DEVICE *search_i2c(byte id,  byte iaddr)
    {
-   	  SI2C_DEVICE *pdev = mpDevice;
+   	SI2C_DEVICE *pdev = mpDevice;
    	  
-   	  while(pdev) {
+   	while(pdev) {
    	  	if (pdev->id == id && pdev->iaddr == iaddr)
-   	  		return pdev;
+   	  	   return pdev;
    	  		
    	  	pdev = pdev->next;	
-   	  }
-   	  return NULL;
+   	}
+   	return NULL;
    }
    
   
@@ -117,55 +113,41 @@ public:
       Wire.endTransmission();
    }
   
-   byte write_byte(uint8_t address, uint8_t subAddress, uint8_t data) {
-   	  byte i2c_err;
+   byte write_byte(uint8_t address, uint8_t reg, uint8_t data) {
+   	byte i2c_err;
    	
-      Wire.beginTransmission(address);    // Initialize the Tx buffer
-      Wire.write(subAddress);             // Put slave register address in Tx buffer
-      Wire.write(data);                   // Put data in Tx buffer
-      i2c_err = Wire.endTransmission();  // Send the Tx buffer
+      Wire.beginTransmission(address);  // Initialize the Tx buffer
+      Wire.write(reg);                  // Put slave register address in Tx buffer
+      Wire.write(data);                 // Put data in Tx buffer
+      i2c_err = Wire.endTransmission(); // Send the Tx buffer
       //if (i2c_err_) print_i2c_error();
       return i2c_err;
    }
     
-   /*
-   void setRegister(byte raddr, byte dt)
-   {
-      uint8_t highbyte = wd>>8;
-      uint8_t lowbyte = (uint8_t) wd;
-
-      // Send the two bytes
-      Wire.beginTransmission(Address);
-      Wire.write(raddr);
-      Wire.write(dt);
-      Wire.endTransmission();
-   }
-   */
-
-   uint8_t read_register(uint8_t address, uint8_t subAddress)
+   uint8_t read_register(uint8_t address, uint8_t reg)
    {
       uint8_t data = 0;                        // `data` will store the register data
       Wire.beginTransmission(address);        // Initialize the Tx buffer
-      Wire.write(subAddress);                 // Put slave register address in Tx buffer
+      Wire.write(reg);                 // Put slave register address in Tx buffer
       i2c_err_ = Wire.endTransmission(false); // Send the Tx buffer, but send a restart to keep connection alive
       if (i2c_err_) //print_i2c_error();
-      	 return 0; 
+      	return 0; 
       Wire.requestFrom(address, (size_t)1);  // Read one byte from slave register address
       if (Wire.available()) 
-      	 data = Wire.read();    // Fill Rx buffer with result
+      	data = Wire.read();    // Fill Rx buffer with result
       Wire.endTransmission();    // Return data read from slave register
       return data;
    }
    
-   uint16_t read_reg_ui16(byte *pdata, uint8_t address, uint8_t subAddress)
+   uint16_t read_reg_ui16(byte *pdata, uint8_t address, uint8_t reg)
    {
       uint16_t wdata;
       uint8_t data = 0;                        // `data` will store the register data
       Wire.beginTransmission(address);        // Initialize the Tx buffer
-      Wire.write(subAddress);                 // Put slave register address in Tx buffer
+      Wire.write(reg);                 // Put slave register address in Tx buffer
       i2c_err_ = Wire.endTransmission(false); // Send the Tx buffer, but send a restart to keep connection alive
       if (i2c_err_) //print_i2c_error();
-      	 return 0; 
+      	return 0; 
       Wire.requestFrom(address, (size_t)2);  // Read one byte from slave register address
       //if (Wire.available()) 
       data = Wire.read();    // Fill Rx buffer with result
