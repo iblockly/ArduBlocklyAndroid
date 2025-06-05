@@ -9,7 +9,7 @@
 아두이노 하드웨어 보드에 'Arduino IDE'을 통해 업로드하여 아두이노가 동작하도록 준비하기 위한 코드이다.
 'documents' 폴더의 '따라하기 Blockly+Arduino앱.pdf' 설명서를 참고하여 파일을 사용한다.
 
-<img src="../assets/images/ArduBlockly_Upload_UNO.png" width="70%" height="70%"  alt="ArduBlockly_Upload_UNO" />
+<img src="../assets/images/ArduBlockly_Upload_UNO.png" width="50%" height="50%"  alt="ArduBlockly_Upload_UNO" />
 
 - 블루투스 설정 - 통신속도 설정
 
@@ -17,7 +17,7 @@
 
 아두이노를 사용한 경우:
 
-<img src="../assets/images/Bluetooth_Setting_Arduino.png" width="70%" height="70%"  alt="Bluetooth_Setting_Arduino" />
+<img src="../assets/images/Bluetooth_Setting_Arduino.png" width="50%" height="50%"  alt="Bluetooth_Setting_Arduino" />
 
 - 아두이노 회로 연결
 
@@ -28,13 +28,13 @@
 
 블루투스 설정을 위한 회로도로 앱을 동작하기 전에 블루투스를 설정하기 위한 회로도이다.
 
-<img src="../assets/images/Bt_Setting_Schematic.png" width="70%" height="70%"  alt="Bt_Setting_Schematic" />
+<img src="../assets/images/Bt_Setting_Schematic.png" width="50%" height="50%"  alt="Bt_Setting_Schematic" />
 
 * 사용설명서에 언급한 예제를 위한 아두이노와 부품의 연결 회로도 
 
 각 예제에 따른 회로로 이다.
 
-<img src="../assets/images/BLKCODE_Exam_I2C.png" width="70%" height="70%"  alt="BLKCODE_Exam_I2C" />
+<img src="../assets/images/BLKCODE_Exam_I2C.png" width="50%" height="50%"  alt="BLKCODE_Exam_I2C" />
 
 
 ## 아두이노 실행 파일 업로드 
