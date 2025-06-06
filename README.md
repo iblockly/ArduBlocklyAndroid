@@ -356,11 +356,13 @@ repeat, while, for 처리를 한다
 
 실행화면에 정보를 표현하기 위한 문자, 도형, 상태바 등을 지원한다. 
 
-![shape_attri_set](assets/images/shape_attri_set.png)
+<!--![shape_attri_set](assets/images/shape_attri_set.png)-->
+<img src="assets/images/shape_attri_set.png" width="40%" height="40%"  alt="shape_attri_set" />
 
 다음의 결과에서 문자는 맨위에 표시하고 도형은 아래 층에 표시한다.
 
-![shape_attri_set_run](assets/images/shape_attri_set_run.png)
+<!-- ![shape_attri_set_run](assets/images/shape_attri_set_run.png)-->
+<img src="assets/images/shape_attri_set_run.png" width="40%" height="40%"  alt="shape_attri_set_run" />
 
 <br />
 
@@ -397,5 +399,6 @@ repeat, while, for 처리를 한다
 실제 적용에 적합하지, 실행에서 문제가 있는지를 검토하고 업데이트가 필요하다. 
 
 기능 추가 및 앱 문제는 다음 연락처로 문의 바랍니다:
+
 이메일: icblockly@gmail.com  &nbsp;&nbsp; dolicom@naver.com<br />
 Phone: 010-5423-7659
