@@ -391,7 +391,11 @@ repeat, while, for 처리를 한다
 
 ## 개발자
 
-개발 및 사용 문의
+#### 개발 및 사용 문의
 
-이메일: icblockly@gmail.com  dolicom@naver.com<br />
+이 앱은 개발이 진행되고 있고, 기초적인 기능을 구현한 버전이 진행되고 있다.
+실제 적용에 적합하지, 실행에서 문제가 있는지를 검토하고 업데이트가 필요하다. 
+
+기능 추가 및 앱 문제는 다음 연락처로 문의 바랍니다:
+이메일: icblockly@gmail.com  &nbsp;&nbsp; dolicom@naver.com<br />
 Phone: 010-5423-7659
