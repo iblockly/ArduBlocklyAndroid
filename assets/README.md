@@ -14,7 +14,7 @@
 
 아두이노
 
-<img src="images/ArduinoUNO-Bluetooth_Sch.png" width="100" height="50" />
+<img src="images/ArduinoUNO-Bluetooth_Sch.jpg" width="100" height="50" />
 
 <img src="images/ArduBlockly_Upload_UNO.png" width="40" height="80" />&nbsp;<img src="images/ArudinoCodeUpload.png" width="40" height="80" />&nbsp;<img src="images/Arduino_Board.png" width="40" height="80" />
 

@@ -2,7 +2,7 @@
 
 <img src="AndroidBlocklyCodeProc.png" width="150" height="50"/> &nbsp; <img src="ArduBlockly_SysConfig.png" width="150" height="50"/>
 
-<img src="ArduinoUNO-Bluetooth_Sch.png" width="100" height="50"/>
+<img src="ArduinoUNO-Bluetooth_Sch.jpg" width="100" height="50"/>
 
 <img src="Arduino_SerialPort.png" width="50" height="60"/> &nbsp; <img src="Arduino_Serial.png" width="50" height="60"/>
  &nbsp; <img src="Arduino_Board.png" width="50" height="60"/>
