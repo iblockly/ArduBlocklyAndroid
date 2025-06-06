@@ -49,7 +49,7 @@
 개인정보침해신고센터		(국번없이) 118		privacy.kisa.go.kr
 대검찰청사이버범죄수사단		(국번없이) 1301		www.spo.go.kr
 경찰청 사이버범죄 신고시스템	(국번없이) 182		ecrm.police.go.kr
-중앙행정심판위원회		(국번없이) 110		www.simpan.go.kr
+중앙행정심판위원회      (국번없이) 110		www.simpan.go.kr
 
 제5조(개인정보처리방침의 적용)
 
