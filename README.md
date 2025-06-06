@@ -388,3 +388,10 @@ repeat, while, for 처리를 한다
 
 기초적인 기능만이 구현된 상황이므로 시험을 통해 블록 등은 추가 또는 변경이 필요할 수 있다.
 
+
+## 개발자
+
+개발 및 사용 문의
+
+이메일: icblockly@gmail.com  dolicom@naver.com<br />
+Phone: 010-5423-7659
