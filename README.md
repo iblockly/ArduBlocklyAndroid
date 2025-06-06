@@ -95,7 +95,7 @@ blockly-android는 안드로이드 앱으로 블록코드 입력 및 실행 소�
 ### 아두이노-블루투스 연결
 
 <!-- ![ArduinoUNO-Bluetooth_Sch](https://github.com/iblockly/ArduBlocklyAndroid/assets/160044072/1f93ddc7-d7be-47df-a6eb-ad3d746f6047)-->
-<img src="assets/images/ArduinoUNO-Bluetooth_Sch.jpg" width="80%" height="80%"  alt="ArduinoUNO-Bluetooth_Sch" />
+<img src="assets/images/ArduinoUNO-Bluetooth_Sch.jpg" width="60%" height="60%"  alt="ArduinoUNO-Bluetooth_Sch" />
 
 아두이노 UNO를 사용할 경우 그림과 같이 연결한다.  블루투스 전원은 사용하는 모듈의 전원을 확인하고 5V인가를 확인하고 다르다면 적당한 Vcc 전원을 선택하여 연결한다.<br>
 아두이노의 블루투스 연결에서 소프트웨어의 선택에서 ‘SoftwareSerial’ 라브러리를 사용할 경우 가끔 오류가 발생할 가능성이 있다. 따라서 USB 쪽에서 사용하는 포트0(RX),1(TX)와 중복 되므로 실행 과정에서 USB에 시리얼 통신을 사용하면 블루투스와 충돌이 일어나므로 통신을 사용하면 안된다. ‘arduino’ 폴더에 제공하는 코드에서는 블루투스 통신은 ‘Serial’ 클래스를 사용하였다.
@@ -321,6 +321,7 @@ repeat, while, for 처리를 한다
 
 
 ## 조이스틱
+
 조이스틱에서 작동되는 좌표를 이벤트 블록에 전달하여 코드에 따라 기능 구현을 할 수 있다.<br>
 조이스틱의 좌표값은 두가지로 보내진다.
 - (x,y) : 조이스틱의 원점으로부터 x, y 값으로 전달
